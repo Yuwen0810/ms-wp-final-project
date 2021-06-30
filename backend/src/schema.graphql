@@ -1,0 +1,70 @@
+type Query {
+  player(playerName: String!): GameRoom
+  gameRoomInfo(roomID: String!): GameRoom
+  allGameRooms: [GameRoom]
+  maze(roomID: String!): String!
+  teleportPosition(roomID: String!): String!
+  startPolling(roomID: String!): Boolean!
+  players(roomID: String!): [GameRoomMember]!
+  finishedPlayerNum(roomID: String!): Int!
+}
+
+type Mutation {
+  playerLogin(playerName: String!): Boolean!
+  playerLogout(playerName: String!): Boolean!
+  createGameRoom(hostName: String!, roomName: String!): String!
+  deleteGameRoom(roomID: String!): Boolean!
+
+  updateGameRoomSetting(roomID: String!, roomName: String, isStart: Boolean, cols: Int, rows: Int, teleportCycle: Int): Boolean!
+
+  joinGameRoom(playerName: String!, roomID: String!): Boolean!
+  quitGameRoom(playerName: String!, roomID: String!): Boolean!
+
+  deleteTeleportPosition(roomID: String!, teleportPosition: String!): Boolean!
+  updateStartPolling(roomID: String!, isStart: Boolean!): Boolean!
+
+  createMaze(roomID: String!, cols: Int!, rows: Int!): Boolean!
+  updateMemberPosition(roomID: String!, playerName: String!, i: Int!, j: Int!, finished: Boolean): Boolean!
+  updateFinishedPlayerNum(roomID: String!, finishedPlayerNum: Int!,playerName: String!,ranking:Int!): Boolean!
+
+  initGameRoom(roomID: String!): Boolean!
+}
+
+type Subscription {
+  allGameRooms: [GameRoom]!
+  gameRoomInfo(roomID: String!): GameRoom!
+  maze(roomID: String!): String!
+  startPolling(roomID: String!): Boolean!
+  players(roomID: String): [GameRoomMember]!
+  finishedPlayerNum(roomID: String!): Int!
+}
+
+
+type Player {
+  name: String!
+  location: String!
+}
+
+type GameRoom {
+  id: String
+  roomName: String!
+  players: [GameRoomMember]!
+  host: String!
+  isStart: Boolean!
+  cols: Int!
+  rows: Int!
+  teleportCycle: Int!
+  teleportPosition: String!
+  startPolling: Boolean!
+  maze: String!
+  finishedPlayerNum: Int!
+}
+
+type GameRoomMember {
+  name: String!
+  i: Int!
+  j: Int!
+  finished: Boolean!
+  ranking: Int
+}
+

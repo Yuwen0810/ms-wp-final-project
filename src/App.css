@@ -1,0 +1,196 @@
+body {
+  background: linear-gradient(-45deg, #eaedb7, #eba9c2, #b8e5f5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+}
+h1{
+  /*text-shadow: 0.1em 0.1em 0.05em rgba(0,0,0,0.3);*/
+  animation: tit 15s ease infinite;
+}
+@keyframes tit {
+  0% {
+    color: rgba(34,100,50,0.3);
+  }
+  25% {
+   color: rgba(34,100,50,0.5);
+  }
+  50%{
+    color: rgba(34,100,50,0.8);
+  }
+  75%{
+    color: rgba(34,100,50,0.5);
+  }
+  100%{
+    color: rgba(34,100,50,0.3);
+  }
+}
+.App-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-title h1 {
+  margin: 0px 20px 20px 0px;
+  font-size: 3em;
+}
+
+.Lobby-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 95%;
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.Lobby-GameRoomList {
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90%;
+  border: 1px solid blue;
+  overflow: auto;
+}
+
+.Lobby-Setting {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10%;
+  border: 1px solid red;
+}
+
+.Lobby-Card {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  margin: 15px 0px;
+  border-radius: 50%;
+}
+
+
+
+
+.GameRoom-Container {
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  height: 95%;
+  width: 90%;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.GameRoom-RoomInfo {
+  height: 10%;
+  width: 100%;
+  margin: auto;
+  border: 1px solid yellowgreen;
+}
+
+.GameRoom-Side {
+  float: left;
+  width: 20%;
+  height: 90%;
+  border: 1px solid red;
+}
+
+.GameRoom-Setting {
+  /*clear: both;*/
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  width: 100%;
+  height: 40%;
+  border: 1px solid green;
+}
+
+.GameRoom-PlayerList {
+  /*clear: both;*/
+  /*display: flex;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  width: 100%;
+  height: 60%;
+  border: 1px solid blueviolet;
+  overflow: auto;
+}
+
+.GameRoom-Canvas-Container {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid blue;
+  overflow: auto;
+
+}
+
+.GameRoom-Title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.GameRoom-SideBarTitle {
+  text-align: center;
+}
+
+.GameRoom-SliderLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(0,0,0,0.7);
+}
+
+.GameRoom-SliderTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.back{
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.maze{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
